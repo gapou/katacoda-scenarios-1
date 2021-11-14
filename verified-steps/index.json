@@ -22,6 +22,6 @@
         "uilayout": "terminal"
     },
     "backend": {
-        "imageid": "git"
+        "imageid": "ubuntu"
     }
 }
