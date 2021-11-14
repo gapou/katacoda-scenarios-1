@@ -7,21 +7,15 @@ When something goes wrong, the only restoration option available is to reconstru
 
 In MySQL, autocommit is on by default for InnoDB, here in this case, we are going to teach you how to disable this option.
 
-1.First, we want to setup a enviroment first:
+First, we want to setup a enviroment first:
 Pulliing the MySQL image and running it on a docker container
 
  `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
 
-Please be noted that, the container require a moment to setup before using, it is suggested to wait at least 20s before continuing to the next command
-
-
-2.Run the MySQL container in Interactive Mode to get access of the bash shell of the container
-
+Run the MySQL container in Interactive Mode to get access of the bash shell of the container
  `docker exec -it mysql bash`{{execute}} 
 
-
-3.Now we can login into our mySQL database with user ROOT
-
+Now we can login into our mySQL database with user ROOT
  `mysql -u root -proot`{{execute}} 
 
 
