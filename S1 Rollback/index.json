@@ -1,11 +1,11 @@
 {
     "noindex": true,
     "title": "S1 Rollback",
-    "description": "Learn how to add the Visualise Tab",
+    "description": "InnoDB autocommit, Commit, and Rollback",
     "details": {
         "steps": [
             {
-                "title": "",
+                "title": "InnoDB autocommit, Commit, and Rollback",
                 "text": "step1.md"
             }
         ]

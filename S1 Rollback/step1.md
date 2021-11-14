@@ -1,14 +1,23 @@
-Ensuring that users have successfully completed certain actions before the proceed can be a useful technique to ensure that are paying attention and they won't hit problems later on in the scenario.
+In this scenario, we are going to teach our users how to make use of the autocommit, Commit, and Rollback functions introduced in InnoDB
 
-When the user clicks Continue, a script is run against the environment.
+Typically individual DML (Insert, Update, Delete) statements are performed in an autocommit transaction, 
+which those commands are committed as soon as the statement successfully completes. 
+There will be no opportunity to roll back the database to the state prior to the statement if autocommit is enabled. 
+When something goes wrong, the only restoration option available is to reconstruct the data from a backup (providing one exists).
 
-For the user to be allowed to proceed, the script should output the text "done". For example, the following verify script checks to make sure the user has run
+In MySQL, autocommit is on by default for InnoDB, here in this case, we are going to teach you how to disable this option.
 
- `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} before they can proceed.
+First, we want to setup a enviroment first:
+Pulliing the MySQL image and running it on a docker container
 
- `docker exec -it mysql bash`{{execute}} before they can proceed.
+ `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
 
- `mysql -u root -p`{{execute}} before they can proceed.
+Run the MySQL container in Interactive Mode to get access of the bash shell of the container
+ `docker exec -it mysql bash`{{execute}} 
+
+Now we can login into our mySQL database with user ROOT
+ `mysql -u root -proot`{{execute}} 
+
 
 <pre>
 [ -d /home/scrapbook/tutorial/.git ] && echo "done"
