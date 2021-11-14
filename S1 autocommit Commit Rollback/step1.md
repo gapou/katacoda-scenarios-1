@@ -18,8 +18,11 @@ Pulliing the MySQL image and running it on a docker container
 
 3.Now we can login into our mySQL database with user ROOT
 
- `mysql -u root -proot`{{execute}} 
- 
+ `mysql -u root -p`{{execute}} 
+
+4.Last, enter password that you set above
+
+ `root`{{execute}}  
  
  
  You should see the MySQL prompt after following these steps
