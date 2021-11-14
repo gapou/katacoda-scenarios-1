@@ -1,5 +1,3 @@
-In this scenario, we are going to teach our users how to make use of the autocommit, Commit, and Rollback functions introduced in InnoDB
-
 Typically individual DML (Insert, Update, Delete) statements are performed in an autocommit transaction, 
 which those commands are committed as soon as the statement successfully completes. 
 There will be no opportunity to roll back the database to the state prior to the statement if autocommit is enabled. 
@@ -7,18 +5,22 @@ When something goes wrong, the only restoration option available is to reconstru
 
 In MySQL, autocommit is on by default for InnoDB, here in this case, we are going to teach you how to disable this option.
 
-First, we want to setup a enviroment first:
+1.First, we want to setup a enviroment first:
 Pulliing the MySQL image and running it on a docker container
 
  `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
+ 
+ Please be noted that time is required for setting up the container, you should wait for at least 20s before proceed to the next step
 
-Run the MySQL container in Interactive Mode to get access of the bash shell of the container
+2.Run the MySQL container in Interactive Mode to get access of the bash shell of the container
 
  `docker exec -it mysql bash`{{execute}} 
 
-Now we can login into our mySQL database with user ROOT
+3.Now we can login into our mySQL database with user ROOT
 
  `mysql -u root -proot`{{execute}} 
+ 
+ 
  
  You should see the MySQL prompt after following these steps
  and login into MySQL with Root user.
