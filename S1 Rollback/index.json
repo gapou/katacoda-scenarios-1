@@ -6,15 +6,15 @@
             {
                 "title": "Step 1 - Setting up the environment",
                 "text": "step1.md"
-            }
+            },
             {
                 "title": "Step 2 - What will happen if autocommit is enabled?",
                 "text": "step2.md"
-            }
+            },
             {
                 "title": "Step 3 - Disabling auto commit and testing",
                 "text": "step3.md"
-            }
+            },
             {
                 "title": "Step 4 - Rollback",
                 "text": "step4.md"
