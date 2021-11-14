@@ -1,15 +1,10 @@
-Katacoda has integrated [Weave Scope](https://weave.works/scope) to help visualise Docker and Kubernetes based deployments.
+First, start a new Docker container for a MySQL Server.
+`docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}}
 
-The aim of integrating Scope is to help people understand what has been deployed and as changes new aspects are deployed to automatically see the impact.
+`docker exec -it mysql bash`{{execute}}
 
-To launch Scope, click the Tab.
+`docker exec -it mysql bash`{{execute}}
 
-## Index.json
+`mysql -u root -p`{{execute}}
 
-To add the visualise tab to your scenarios, include the following JSON snippet within the environments node. This will automatically add the tab to the scenarios. When the tab is pressed, the command to launch the Scope container will run.
-
-<pre class="file">
-"showvisualise": true,
-"scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
-"scopePort": 4040,
-</pre>
+`CREATE USER 'test'@'localhost' IDENTIFIED BY 'pass123546';`{{execute}}
