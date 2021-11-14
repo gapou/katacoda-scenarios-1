@@ -1,15 +1,30 @@
-Katacoda has integrated [Weave Scope](https://weave.works/scope) to help visualise Docker and Kubernetes based deployments.
+Ensuring that users have successfully completed certain actions before the proceed can be a useful technique to ensure that are paying attention and they won't hit problems later on in the scenario.
 
-The aim of integrating Scope is to help people understand what has been deployed and as changes new aspects are deployed to automatically see the impact.
+When the user clicks Continue, a script is run against the environment.
 
-To launch Scope, click the Tab.
+For the user to be allowed to proceed, the script should output the text "done". For example, the following verify script checks to make sure the user has run
 
-## Index.json
+ `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} before they can proceed.
 
-To add the visualise tab to your scenarios, include the following JSON snippet within the environments node. This will automatically add the tab to the scenarios. When the tab is pressed, the command to launch the Scope container will run.
+ `docker exec -it mysql bash`{{execute}} before they can proceed.
 
-<pre class="file">
-"showvisualise": true,
-"scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
-"scopePort": 4040,
+ `mysql -u root -p`{{execute}} before they can proceed.
+
+<pre>
+[ -d /home/scrapbook/tutorial/.git ] && echo "done"
+</pre>
+
+If you run `git init`{{execute}}, you will be allowed to continue.
+
+The `index.json` example is:
+<pre>
+"details": {
+    "steps": [
+        {
+            "title": "Step 1 - Verify",
+            "text": "step1.md",
+            "verify": "step1-verify.sh"
+        }
+    ]
+}
 </pre>
