@@ -13,14 +13,27 @@ Pulliing the MySQL image and running it on a docker container
  `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
 
 Run the MySQL container in Interactive Mode to get access of the bash shell of the container
-
  `docker exec -it mysql bash`{{execute}} 
 
 Now we can login into our mySQL database with user ROOT
-
  `mysql -u root -proot`{{execute}} 
- 
- You should see the MySQL prompt after following these steps
- and login into MySQL with Root user.
- 
- Now, we will move on if you finished double checking...
+
+
+<pre>
+[ -d /home/scrapbook/tutorial/.git ] && echo "done"
+</pre>
+
+If you run `git init`{{execute}}, you will be allowed to continue.
+
+The `index.json` example is:
+<pre>
+"details": {
+    "steps": [
+        {
+            "title": "Step 1 - Verify",
+            "text": "step1.md",
+            "verify": "step1-verify.sh"
+        }
+    ]
+}
+</pre>

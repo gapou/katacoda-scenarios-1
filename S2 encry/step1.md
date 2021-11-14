@@ -1,15 +1,26 @@
-Katacoda has integrated [Weave Scope](https://weave.works/scope) to help visualise Docker and Kubernetes based deployments.
+In this scenario, we are going to teach our users how to make use of the autocommit, Commit, and Rollback functions introduced in InnoDB
 
-The aim of integrating Scope is to help people understand what has been deployed and as changes new aspects are deployed to automatically see the impact.
+Typically individual DML (Insert, Update, Delete) statements are performed in an autocommit transaction, 
+which those commands are committed as soon as the statement successfully completes. 
+There will be no opportunity to roll back the database to the state prior to the statement if autocommit is enabled. 
+When something goes wrong, the only restoration option available is to reconstruct the data from a backup (providing one exists).
 
-To launch Scope, click the Tab.
+In MySQL, autocommit is on by default for InnoDB, here in this case, we are going to teach you how to disable this option.
 
-## Index.json
+First, we want to setup a enviroment first:
+Pulliing the MySQL image and running it on a docker container
 
-To add the visualise tab to your scenarios, include the following JSON snippet within the environments node. This will automatically add the tab to the scenarios. When the tab is pressed, the command to launch the Scope container will run.
+ `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
 
-<pre class="file">
-"showvisualise": true,
-"scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
-"scopePort": 4040,
-</pre>
+Run the MySQL container in Interactive Mode to get access of the bash shell of the container
+
+ `docker exec -it mysql bash`{{execute}} 
+
+Now we can login into our mySQL database with user ROOT
+
+ `mysql -u root -proot`{{execute}} 
+ 
+ You should see the MySQL prompt after following these steps
+ and login into MySQL with Root user.
+ 
+ Now, we will move on if you finished double checking...

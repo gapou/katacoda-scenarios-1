@@ -1,19 +1,33 @@
 {
-    "noindex": true,
-    "title": "S2 Encry",
-    "description": "Learn how to add the Visualise Tab",
+    "title": "S2 InnoDB Data-at-Rest Encryption",
+    "description": "InnoDB Data-at-Rest Encryption",
     "details": {
         "steps": [
             {
-                "title": "",
+                "title": "Step 1 - Setting up the environment",
                 "text": "step1.md"
-            }
-        ]
+            },
+            {
+                "title": "Step 2 - ",
+                "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - ",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - ",
+                "text": "step4.md"
+            }			
+        ],
+    "intro": {
+      "text": "intro.md"
     },
-    "files": [],
-    "environment": {
-        "hideintro": true, "hidefinish": true,
-        
+    "finish": {
+      "text": "finish.md"
+	}
+   },
+    "environment": {        
         "showvisualise": true,
         
         "uilayout": "terminal"
