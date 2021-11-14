@@ -10,7 +10,32 @@ In MySQL, autocommit is on by default for InnoDB, here in this case, we are goin
 First, we want to setup a enviroment first:
 Pulliing the MySQL image and running it on a docker container
 
- `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} 
+
+ Create a table inside the database
+
+ `CREATE DATABASE testDB;`{{execute}} 
+ `use testDB;`{{execute}} 
+ `CREATE TABLE tester (age INT, name CHAR (20), INDEX (age));`{{execute}} 
+ `show tables;`{{execute}} 
+
+ Insert show orgin info inside
+ `INSERT INTO tester VALUES (10, 'Alice');`{{execute}} 
+ `SELECT * FROM tester;`{{execute}}
+
+ Create a save log here.
+ `COMMIT;`{{execute}} 
+ `SET autocommit=0;`{{execute}} 
+
+ Assume some people change the info inside
+ `INSERT INTO tester VALUES (10, 'Bob');`{{execute}} 
+ `INSERT DELETE tester VALUES (10, 'Alice');`{{execute}} 
+ `SELECT * FROM tester;`{{execute}}
+
+ `ROLLBACK;`{{execute}}
+
+ After that check it again.
+ `SELECT * FROM tester;`{{execute}}
+
 
 Run the MySQL container in Interactive Mode to get access of the bash shell of the container
  `docker exec -it mysql bash`{{execute}} 
