@@ -1,15 +1,33 @@
 {
     "noindex": true,
     "title": "S1 Rollback",
-    "description": "InnoDB autocommit, Commit, and Rollback",
+    "description": "Learn how to make use of InnoDB autocommit, Commit, and Rollback",
     "details": {
         "steps": [
             {
-                "title": "InnoDB autocommit, Commit, and Rollback",
+                "title": " Step 1 - Setting up the environment",
                 "text": "step1.md"
             }
+			{
+                "title": " Step 2 - What will happen if autocommit is enabled?",
+                "text": "step2.md"						
+			}
+			{
+                "title": " Step 3 - Disabling auto commit and testing ",
+                "text": "step3.md"						
+			}
+			{
+                "title": " Step 4 - Rollback",
+                "text": "step4.md"						
+			}			
         ]
-    },
+    "intro": {
+      "text": "intro.md"
+    },		
+    "finish": {
+      "text": "finish.md"
+    }		
+    },	
     "files": [],
     "environment": {
         "hideintro": true, "hidefinish": true,
